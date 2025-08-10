@@ -41,7 +41,26 @@ const App = () => {
   return (
     <>
       <h1>Local Weather</h1>
-      <section>// Weather data here</section>
+      <section>
+        <ul>
+          {weatherForecasts.map((element) => {
+            return (
+              <div className="weather">
+                <h2>{element.day}</h2>
+                <img src={element.img} alt={element.imgAlt} />
+                <p>
+                  <span>Conditions: </span>
+                  {element.conditions}
+                </p>
+                <p>
+                  <span>Time: </span>
+                  {element.time}
+                </p>
+              </div>
+            );
+          })}
+        </ul>
+      </section>
     </>
   );
 };
